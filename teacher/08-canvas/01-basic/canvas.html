@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img id="ball" src="ball.jpg" alt="The Scream" style="">
+<p>Canvas:</p>
+<canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;"/>
+<script>
+window.onload = function() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("ball"); // 取得 id=ball 的隱藏 image 元素  
+  ctx.drawImage(img, 10, 100); // 畫球的圖片
+  // 畫紅色框線
+  ctx.beginPath();
+  ctx.strokeStyle="red";
+  ctx.rect(20,20,40,40);
+  ctx.stroke();
+  // 畫藍色實心方框
+  ctx.beginPath();
+  ctx.fillStyle="#0000FF";
+  ctx.fillRect(80,20,50,50);
+  ctx.stroke();   
+  // 畫黑色圓圈框線
+  ctx.beginPath();
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = 5; // 筆的寬度為 5px
+  ctx.arc(100,75,50,0,3/2*Math.PI);
+  ctx.stroke();
+}
+</script>
+
+</body>
+</html>

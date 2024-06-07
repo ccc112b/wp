@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="topbar.css"/>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">首頁</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">使用者
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="#login">登入</a>
+      <a href="#logout">登出</a>
+      <a href="#signup">註冊</a>
+    </div>
+  </div> 
+</div>
+<div class="bigmargin">
+  <h1>首頁</h1>
+  <p>本網頁可以按功能表去切換畫面</p>  
+</div>
+<script src="topbar.js"></script>
+</body>
+</html>

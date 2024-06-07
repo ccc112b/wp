@@ -1,0 +1,78 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Topbar styles */
+.topbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-menu {
+    /*display: none;*/
+}
+
+.topbar-menu ul {
+    list-style-type: none;
+}
+
+.topbar-menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.topbar-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Sidebar styles */
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: #444;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-menu {
+    padding: 20px;
+}
+
+.sidebar-menu ul {
+    list-style-type: none;
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Content styles */
+.content {
+    margin-left: 280px;
+    padding: 20px;
+}

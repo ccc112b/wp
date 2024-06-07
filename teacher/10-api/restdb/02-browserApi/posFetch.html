@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+async function posFetch(q) {
+    const jsonResponse = await fetch("https://ccckmit-a577.restdb.io/rest/shop?key=664813b6fa0ff0d1dc85c118", 
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'x-apikey': 'b25aee0960cfd52de8ee42ebe36da14cc29aa',
+            // 'Authorization': `Bearer ${key}`,
+        }
+    })
+    const jsonData = await jsonResponse.json()
+    console.log(JSON.stringify(jsonData, null, 2))
+    return jsonData
+}
+
+posFetch()
+
+</script>
+</body>
+</html>

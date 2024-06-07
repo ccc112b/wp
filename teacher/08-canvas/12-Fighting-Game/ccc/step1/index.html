@@ -1,0 +1,61 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style media="screen">
+    * {
+      box-sizing: border-box;
+      font-family: 'Press Start 2P', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- red container div -->
+  <div style="position: relative; display: inline-block">
+    <!-- smaller rectangle div -->
+    <div
+    style="
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+    ">
+      <!-- player health -->
+      <div style="position: relative; width: 100%; display: flex; border: 4px solid white; justify-content: flex-end; border-right: none;">
+        <div style="background-color: red; height: 30px; width: 100%"></div>
+        <div id="playerHealth" style="position: absolute; background: #818CF8; top: 0; bottom: 0; right: 0; width: 100%"></div>
+      </div>
+
+      <!-- timer -->
+      <div id="timer" style="background-color: black; width: 100px; height: 50px; flex-shrink: 0; display: flex; align-items:center; justify-content: center; color: white; border: 4px solid white;">
+      60
+      </div>
+
+      <!-- enemy health -->
+      <div style="position: relative; width: 100%; border: 4px solid white; border-left: none">
+        <div style="background-color: red; height: 30px;"></div>
+        <div id="enemyHealth" style="position: absolute; background: #818CF8; top: 0; bottom: 0; right: 0; left: 0"></div>
+      </div>
+      <div></div>
+    </div>
+    <div
+    id = "display-text"
+    style="position: absolute;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none"></div>
+    <canvas></canvas>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/classes.js"></script>
+  <script src="index.js"></script>
+</body>

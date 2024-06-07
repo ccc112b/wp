@@ -1,0 +1,32 @@
+<html>
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="sci.css">
+</head>
+<body>
+  <header>
+    <div>
+      科學計算平台：
+      <i class="fa fa-play" aria-hidden="true"></i>
+    </div>
+  </header>
+  <div class="container">
+    <textarea class="code">
+Matrix = ML.Matrix
+var A = new Matrix([[1, 1], [2, 2]]);
+var B = new Matrix([[3, 3], [1, 1]]);
+var C = new Matrix([[3, 3], [1, 1]]);
+dump(C.add(A));
+dump(C.sub(A));
+    </textarea>
+    <button id="run" onclick="run()">Run</button>
+    <br/>
+  </div>
+  <div class="container">
+    <div class="out">
+    </div>  
+  </div>
+  <script src="https://www.lactame.com/lib/ml/4.0.0/ml.min.js"></script>
+  <script src="sci.js"></script>
+</body>
+</html>

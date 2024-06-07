@@ -1,0 +1,17 @@
+<html>
+<body>
+<p id="msg"></p>
+<script>
+var msg = document.querySelector('#msg')
+
+window.onhashchange = function() {
+    msg.innerHTML = `
+      ${window.location.hash}<br/>
+      ${decodeURI(window.location.hash)}<br/>
+    `
+}
+
+window.onhashchange()
+</script>
+</body>
+</html>

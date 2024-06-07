@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+body {
+    margin:0px;
+}
+#bar {
+    background-color:#000000;
+    width:100%;
+    height:50px;
+}
+.menu a {
+    color:#ffffff;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.menu {
+    color:#ffffff;
+    float:right;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    width: 5em;
+}
+.popup, .menuhead {
+    color:#ffffff;
+    background-color: #000000;
+    width: 5em;
+    padding: 5px 10px;
+}
+
+.popup {
+    z-index: 2;
+    position: absolute;
+    display: none;
+}
+
+</style>
+</head>
+<body>
+<div id="bar">
+    <div class="menu">
+        <div class="menuhead">
+            <a href="#user" onclick="menuToggle('userPopup')">使用者</a>
+        </div>
+        <div class="popup" id="userPopup">
+            <a href="#login">登入</a><br/>
+            <a href="#logout">登出</a><br/>
+            <a href="#signup">註冊</a><br/>
+            <a href="#myarea">我的專區</a><br/>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menuhead">
+            <a href="#system" onclick="menuToggle('systemPopup')">系統</a>
+        </div>
+        <div class="popup" id="systemPopup">
+            <a href="#aboutus">關於本站</a><br/>
+            <a href="#add">新增貼文</a><br/>
+            <a href="#search">查詢貼文</a><br/>
+        </div>
+    </div>
+</div>
+<script>
+function menuToggle(id) {
+    let menu = document.getElementById(id)
+    menu.style.display = (menu.style.display === 'block')?'none':'block'
+}
+</script>
+</body>
+</html>

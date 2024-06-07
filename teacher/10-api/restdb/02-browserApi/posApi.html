@@ -1,0 +1,17 @@
+<!-- First JQuery, Bootstrap, etc, ... -->
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<script src="https://ccckmit-a577.restdb.io/rest/_jsapi.js"></script>
+<script>
+var db = new restdb("b25aee0960cfd52de8ee42ebe36da14cc29aa", options={});
+var obj = new db.shop(properties={});
+var query = {}; // get all records
+var hints = {"$max": 10, "$orderby": {"_id": -1}}; // top ten, sort by creation id in descending order
+db.shop.find(query, hints, function(err, res){
+  if (!err){
+    console.log('err=', err)
+  }
+});
+</script>

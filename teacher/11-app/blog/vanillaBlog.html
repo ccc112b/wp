@@ -1,0 +1,140 @@
+<html>
+<head>
+  <title>Blog</title>
+  <style>
+    body {
+      padding: 80px;
+      font: 16px Helvetica, Arial;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    #posts {
+      margin: 0;
+      padding: 0;
+    }
+    #posts li {
+      margin: 40px 0;
+      padding: 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      list-style: none;
+    }
+    #posts li:last-child {
+      border-bottom: none;
+    }
+    textarea {
+      width: 500px;
+      height: 300px;
+    }
+    input[type=text],
+    textarea {
+      border: 1px solid #eee;
+      border-top-color: #ddd;
+      border-left-color: #ddd;
+      border-radius: 2px;
+      padding: 15px;
+      font-size: .8em;
+    }
+    input[type=text] {
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <section id="content">
+    <!-- list: 列出所有貼文的畫面 -->
+    <div id="list" class="panel">
+      <h1>Posts</h1>
+      <p>You have <strong id="postsLength"></strong> posts!</p>
+      <p><a href="#/create/">Create a Post</a></p>
+      <ul id="posts">
+      </ul>
+    </div>
+    <!-- create : 創建新貼文的畫面 -->
+    <div id="create" class="panel">
+      <h1>New Post</h1>
+      <p>Create a new post.</p>
+      <p><input type="text" placeholder="Title" id="postTitle"></p>
+      <p><textarea placeholder="Contents" id="postBody"></textarea></p>
+      <p><input type="button" value="Create" onclick="save()"></p>
+    </div>
+    <!-- show : 顯示某筆貼文的畫面 -->
+    <div id="show" class="panel">
+      <h1 id="showTitle"></h1>
+      <p id="showBody"></p>
+    </div>
+  </section>
+<script>
+let posts = []
+
+// 顯示 id 指定的 panel (div)
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach((node) => node.style.display='none')
+  document.getElementById(id).style.display = 'block'
+}
+
+// 列出所有貼文
+function list() {
+  let postsHtml = []
+  for (let i=0; i<posts.length; i++) {
+    postsHtml.push(`<li><h2>${posts[i].title}</h2><p><a href="#/show/${i}">Read post</a></p></li>`)
+  }
+  document.getElementById('posts').innerHTML = postsHtml.join('\n')
+  document.getElementById('postsLength').innerHTML = posts.length
+  showPanel('list')
+}
+
+// 儲存貼文
+function save() {
+  var title = document.getElementById('postTitle').value
+  var body  = document.getElementById('postBody').value
+  posts.push({title: title, body: body})
+  // 最後讓 hash='#/list/' 會觸發 list() 列出所有貼文
+  window.location.hash = '#/list/'
+}
+
+// 顯示 id=match[1] 所指定的貼文
+function show(match) {
+  let i = parseInt(match[1])
+  document.getElementById('showTitle').innerHTML = posts[i].title
+  document.getElementById('showBody').innerHTML = posts[i].body
+  showPanel('show')
+}
+
+// 顯示『創建新貼文』的畫面。
+function create(match) {
+  showPanel('create')
+  document.getElementById('postTitle').value = ''
+  document.getElementById('postBody').value = ''
+}
+
+// router 路徑地圖
+let routeMap = [
+  [/^\/?show\/(\w+)\/?$/, show],
+  [/^\/?list\/?$/, list],
+  [/^\/?create\/?$/, create],
+]
+
+// 當 hash 改變時，觸發路徑地圖對應的函數。
+window.onhashchange = function () {
+  var hash = window.location.hash.trim().substring(1)
+  for (let [regexp, f] of routeMap) {
+    var m = hash.match(regexp)
+    if (m) {
+      f(m, hash)
+      break
+    }
+  }
+}
+
+// 網頁載入完成後，呼叫 list() 列出所有貼文！
+window.onload = function() {
+  window.location.hash = '#/list/'
+}
+</script>
+</body>
+</html>

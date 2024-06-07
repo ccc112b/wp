@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+input { width:400px }
+    </style>
+    <title>小翻譯系統</title>
+  </head>
+  <body>
+<script>
+  var e2c = {cat: "貓", dog: "狗", a: "一隻", the: "這隻", chase:"追", eat:"吃"}
+  function mt() {
+    var english = document.getElementById('english')
+    var chinese = document.getElementById('chinese')
+    var e = english.value.split(/\s+/) // 用空白將句子 english.value 切割成詞彙陣列 e[]
+    var c = []
+    for (var i=0; i < e.length; i++) {
+      var eword = e[i] // 取得英文詞彙
+      c.push(e2c[eword]) // 用 e2c 查出中文，再推入 c[] 裡面。
+    }
+    chinese.innerText = c.join(' ') // 將整個陣列用空白連接
+    // 所以 ['一隻', '狗', '追', '一隻', '貓'] 就會連接成 '一隻 狗 追 一隻 貓' 
+  }
+</script>    
+    <input id="english" type="text" value="a cat chase a dog"/>
+    <button onclick="mt()">翻譯</button><br/><br/>
+    <label id="chinese"></label>
+  </body>
+</html>

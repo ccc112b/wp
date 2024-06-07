@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+* {
+  margin:0;
+  padding:0;
+}
+div {
+  width: 20px;
+  height: 100vh;
+  background: red;
+  transition: width 2s;
+}
+/*
+div:hover {
+  width: 300px;
+}
+*/
+</style>
+</head>
+<body>
+
+<div id="sidebar" onclick="toggle()"></div>
+
+<script>
+let mode = 'narrow'
+let sidebar = document.querySelector('#sidebar')
+console.log('sidebar=', sidebar)
+function toggle() {
+   if (mode == 'narrow')
+   {
+      mode = 'wide'
+      sidebar.style.width = "100px"
+   } else {
+      mode = 'narrow'
+      sidebar.style.width = "20px"
+   }
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
+

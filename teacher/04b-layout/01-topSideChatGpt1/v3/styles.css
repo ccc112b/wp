@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    /*max-width: 1200px;*/
+    padding: 0px;
+}
+
+.topbar {
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.menu {
+    float: right;
+    height: 2em;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu ul li:first-child {
+    margin-left: 0;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+}
+
+.menu ul li:hover ul {
+    display: block;
+}
+
+.menu ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #343a40;
+    padding: 0px;
+    top: 0px;
+    left: 0;
+    height: 30px;
+}
+
+.menu ul li ul li {
+    display: block;
+    height: 30px;
+}
+
+.menu ul li ul li a {
+    color: #fff;
+}
+
+.sidebar {
+    background-color: #495057;
+    width: 250px;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 20px;
+}
+
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.sidebar-toggle {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+}

@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "lib": [ "DOM", "ES6", "DOM.Iterable", "ScriptHost"],
+      "strict": true,
+      "esModuleInterop": true
+    },
+    "exclude": [
+        "public"
+    ]
+  }

@@ -1,0 +1,21 @@
+<html>
+<style>
+div {border: 1px solid #dddddd;}
+</style>
+<body>
+  <button onclick="document.querySelectorAll('div').forEach(o=>o.innerHTML='Hi!')">div:Hi!</button>
+  <button onclick="document.querySelectorAll('.main p').forEach(o=>o.innerHTML='Fun!')">#main p: Fun!</button>
+
+  <div class="side">
+  </div>
+
+  <div class="main">
+    <p>Hello!</p>
+    <div>Hello!</div>
+    <p>Hello!</p>
+    <div>Hello!</div>  
+  </div>
+
+  <div class="footer">Author: ccckmit</div>
+</body>
+</html>
